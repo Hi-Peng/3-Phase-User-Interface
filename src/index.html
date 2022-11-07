@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>AC Regulator-Converter Controller</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://unpkg.com/phosphor-icons"></script>
+</head>
+
+<body>
+  <div class="app-header">
+    <div class="app-header-logo-title">
+      <h1 class="title-style">
+        <span>SCR-TRIAC</span>
+        <span>Phase Angle Control</span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="app-content">
+    <div class="app-content-plotter">
+      <canvas id="myCanvas" class="app-content-plotter-canvas"></canvas>
+
+    </div>
+
+    <div class="app-content-slider">
+      <h2>Phase Angle Control</h2>
+      <div class="app-content-slider-pack">
+        <div class="range">
+          <div class="sliderValue">
+            <span id="slider-value-span">100</span>
+          </div>
+          <div class="field">
+            <div class="value left">
+              0</div>
+            <input id="input-slider" type="range" min="-314" max="0" value="-314" steps="0.1" oninput="update_plot()">
+            <div class="value right">
+              180</div>
+          </div>
+        </div>
+        <div class="angle-value">
+          <span id="angle-value-span">0°</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="app-content-control">
+      <button id="modeSelectButton" type="button" onclick="changeMode()">Mode</button>
+      <select class="app-content-port-select" id="app-content-port-select"></select>
+      <button id="app-content-port-scan" onclick="portPopulate()">Scan Port</button>
+      <button id="app-content-port-connect" onclick="connectPort()">Connect</button>
+      <script src="serial_port_hanlder.js"></script>
+    </div>
+    <script src="canvas_math_graph.js" defer></script>
+   
+  </div>
+</body>
+
+</html>

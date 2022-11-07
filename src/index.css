@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+	--c-gray-900: #000000;
+	--c-gray-800: #1f1f1f;
+	--c-gray-700: #2e2e2e;
+	--c-gray-600: #313131;
+	--c-gray-500: #969593;
+	--c-gray-400: #a6a6a6;
+	--c-gray-300: #bdbbb7;
+	--c-gray-200: #f1f1f1;
+	--c-gray-100: #ffffff;
+
+	--c-green-500: #45ffbc;
+	--c-olive-500: #e3ffa8;
+
+	--c-white: var(--c-gray-100);
+
+	--c-text-primary: var(--c-gray-100);
+	--c-text-secondary: var(--c-gray-200);
+	--c-text-tertiary: var(--c-gray-500);
+}
+
+body {
+	font-family: monospace;
+	background-color: var(--c-gray-800);
+	color: var(--c-text-primary);
+}
+
+.app-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 35px;
+	padding: 5px 0%;
+	border-bottom: 1px solid var(--c-text-tertiary);
+}
+
+.app-header-logo-title {
+	width: 200px;
+	height: 75px;
+}
+
+.title-style {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.25;
+	margin-left: 0.75rem;
+}
+
+.title-style span:first-child {
+	font-size: 12pt;
+	font-family: monospace;
+	color: var(--c-text-primary);
+}
+
+.title-style span:last-child {
+	font-size: 10pt;
+	font-family: monospace;
+	color: var(--c-text-secondary);
+}
+
+.app-header-nav {
+	font-size: 16px;
+	display: flex;
+	gap: 2rem;
+
+	padding: 0px 40px;
+	text-decoration: none;
+	list-style: none;
+}
+
+.app-header-settings {
+	display: block;
+	justify-content: center;
+	text-align: center;
+}
+
+.app-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	padding: 5px 0%;
+}
+
+.app-content-plotter {
+	width: 100%;
+}
+
+.app-content-plotter-canvas {
+	width: 740px;
+	height: 252px;
+}
+
+.app-content-slider-pack{
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+}
+.range {
+	height: 80px;
+	width: 70%;
+	background: var(--c-gray-600);
+	border-radius: 10px;
+	padding: 0 65px 0 45px;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sliderValue {
+	position: relative;
+	width: 100%;
+}
+
+.sliderValue span {
+	position: absolute;
+	height: 45px;
+	width: 45px;
+	transform: translateX(-70%) scale(0);
+	font-weight: 500;
+	top: -40px;
+	line-height: 55px;
+	z-index: 2;
+	color: #fff;
+	transform-origin: bottom;
+	transition: transform 0.3s ease-in-out;
+}
+
+.sliderValue span.show {
+	transform: translateX(-70%) scale(1);
+}
+
+.sliderValue span:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	background: #664AFF;
+	border: 3px solid #fff;
+	z-index: -1;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+	border-bottom-left-radius: 50%;
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+	border-top-left-radius: 50%;
+	border-top-right-radius: 50%;
+}
+
+.field {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	position: relative;
+}
+
+.field .value {
+	position: absolute;
+	font-size: 18px;
+	color: #664AFF;
+	font-weight: 600;
+}
+
+.field .value.left {
+	left: -22px;
+}
+
+.field .value.right {
+	right: -43px;
+}
+
+.range input {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 3px;
+	background: #ddd;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	z-index: 2222;
+}
+
+.range input::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	background: red;
+	border-radius: 50%;
+	background: #664AFF;
+	cursor: pointer;
+}
+
+.range input::-moz-range-thumb {
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	background: red;
+	border-radius: 50%;
+	background: #664AFF;
+	cursor: pointer;
+}
+
+.angle-value {
+	height: 80px;
+	width: 20%;
+	background: var(--c-gray-600);
+	border-radius: 10px;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+	font-size: 32pt;
+	font-weight: 900;
+	text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-content-control {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 40px;
+	gap: 0.2rem;
+	border: 1px solid #45ffbc;
+}
+.app-content-port-select{
+	width: 30%;
+}
